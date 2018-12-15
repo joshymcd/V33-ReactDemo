@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      airportName: 'ewqewqewe'
+      airportName: ''
     };
 
     this.handleChange = this.handleChange.bind(this);

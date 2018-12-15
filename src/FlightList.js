@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Flight from './Flight.js'
 
 class FlightList extends Component {
 
@@ -34,12 +35,14 @@ class FlightList extends Component {
 
   render(){
 
+
+
     return (
       <div>
         <h2>{this.props.airportName} - {this.props.type}s</h2>
         <ul>
         {this.state.data.map((flight) =>
-          <li key={flight.icao24}>{flight.callsign}</li>
+          <Flight key={flight.icao24 + '-' + flight.lastSeen} flight={flight} />
         )}
         </ul>
       </div>
