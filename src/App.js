@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data.js';
 
 const LeftStyles = {
   backgroundColor: '#ff9e2c',
@@ -9,13 +8,28 @@ const LeftStyles = {
 }
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      airportName: 'ewqewqewe'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event){
+    this.setState({airportName: event.target.value})
+  }
+
+
   render() {
     return (
-      <div class="container">
+      <div>
         <h1>Flights App</h1>
-        <p>Airport ID: <input type="text"/></p>
+        <p>Airport ID: <input type="text" value={this.state.airportName} onChange={this.handleChange}/></p>
         <div style={LeftStyles}>
-          <h2>Arrivals</h2>
+          <h2>Arrivals from {this.state.airportName}</h2>
           <ul>
             <li>Flight 0</li>
             <li>Flight 1</li>
@@ -24,7 +38,7 @@ class App extends Component {
           </ul>
         </div>
         <div className="right-half">
-        <h2>Departures</h2>
+        <h2>Departures to {this.state.airportName}</h2>
         <ul>
           <li>Flight 0</li>
           <li>Flight 1</li>
