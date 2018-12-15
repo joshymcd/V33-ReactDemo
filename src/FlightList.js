@@ -15,7 +15,7 @@ class FlightList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
-    var URL = 'https://opensky-network.org/api/flights/' + this.props.type + '?airport=EGLL&begin=1544400000&end=1544832000';
+    var URL = 'https://opensky-network.org/api/flights/' + this.props.type + '?airport='+this.props.airportName+'&begin=1544745600&end=1544832000';
     if (this.props !== prevProps) {
       console.log('URL');
       console.log(URL);
