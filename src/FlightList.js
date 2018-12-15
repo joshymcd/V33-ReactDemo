@@ -7,7 +7,7 @@ class FlightList extends Component {
 
     return (
       <div>
-        <h2></h2>
+        <h2>{this.props.type}</h2>
         <ul>
           <li>Flight 0</li>
           <li>Flight 1</li>

@@ -30,10 +30,10 @@ class App extends Component {
         <h1>Flights App</h1>
         <p>Airport ID: <input type="text" value={this.state.airportName} onChange={this.handleChange}/></p>
         <div style={LeftStyles}>
-          <FlightList />
+          <FlightList type="arrival" />
         </div>
         <div className="right-half">
-          <FlightList />
+          <FlightList type="departure" />
         </div>
       </div>
     );
