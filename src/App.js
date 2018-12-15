@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import FlightList from  './FlightList.js';
 
 const LeftStyles = {
   backgroundColor: '#ff9e2c',
@@ -29,22 +30,10 @@ class App extends Component {
         <h1>Flights App</h1>
         <p>Airport ID: <input type="text" value={this.state.airportName} onChange={this.handleChange}/></p>
         <div style={LeftStyles}>
-          <h2>Arrivals from {this.state.airportName}</h2>
-          <ul>
-            <li>Flight 0</li>
-            <li>Flight 1</li>
-            <li>Flight 2</li>
-            <li>Flight 3</li>
-          </ul>
+          <FlightList />
         </div>
         <div className="right-half">
-        <h2>Departures to {this.state.airportName}</h2>
-        <ul>
-          <li>Flight 0</li>
-          <li>Flight 1</li>
-          <li>Flight 2</li>
-          <li>Flight 3</li>
-        </ul>
+          <FlightList />
         </div>
       </div>
     );
